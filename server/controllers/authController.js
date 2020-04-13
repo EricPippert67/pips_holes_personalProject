@@ -19,4 +19,26 @@ module.exports = {
 
         req.session.user = sessionCustomer;
         res.status(201).send(req.session.user);
-    }
+    },
+    login: async(req, res)=>{
+        const {email, password} = req.body,
+        db = req.app.get('db');
+
+        let foundUser = await db.customer.check_customer(email);
+        if(!foundUser[0]){
+        return res.status(400).send("User is not found")
+}
+        const authorized=bcrypt.compareSync(password, foundUser[0].password);
+        if(!authorized){
+        return res.status(401).send('Password is wrong, try again')
+
+}
+        delete foundUser[0].password;
+        req.session.user = foundUser[0];
+        res.status(202).send(req.session.user);
+},
+    logout: (req,res) => {
+        req.session.destroy();
+        res.sendStatus(200);
+}
+}
