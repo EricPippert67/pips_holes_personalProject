@@ -1,2 +1,2 @@
 import React, {Component} from 'react';
-import 
+import logo from './logo.svg';

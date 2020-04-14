@@ -65,5 +65,6 @@ app.delete('/api/cart_item/:id', donutCtrl.deleteCartItem);
 app.post('/api/register', authCtrl.register);
 app.post('/api/login', authCtrl.login);
 app.get('/api/logout', authCtrl.logout);
+app.post('/api/payment', authCtrl.pay)
 
 app.listen(port, () => console.log(`Server running on ${port}`));
