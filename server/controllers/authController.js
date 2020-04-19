@@ -65,6 +65,8 @@ pay:(req,res)=>{
                 
                 return res.status(200).send(charge)
             }
+          }
+        )},
     email: async (req, res) => {
         const { name, message, email, title, image } = req.body
             
@@ -109,6 +111,5 @@ pay:(req,res)=>{
                   res.sendStatus(500)
                 }
               }
-            }
-        },
-    }
+        }
+  

@@ -1,0 +1,82 @@
+.Storefront-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1140px;
+}
+
+.Storefront {
+  background-color: magenta;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.donut-cont1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.orderDonut {
+  background-color: indigo;
+  width: 500px;
+  height: 500px;
+  padding: 40px;
+  margin: 15px;
+}
+
+.freeDonut {
+  background-color: mediumpurple;
+  width: 500px;
+  height: 200px;
+  padding: 40px;
+  margin: 15px;
+  position: relative;
+}
+
+.randomDonutImg {
+  background-color: plum;
+  width: 500px;
+  height: 200px;
+  padding: 40px;
+  margin: 15px;
+  position: relative;
+}
+
+.donut-cont2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fundraising {
+  background-color: red;
+  width: 450px;
+  height: 400px;
+  padding: 40px;
+  margin: 15px;
+}
+
+.merchImage {
+  background-color: lime;
+  width: 450px;
+  height: 400px;
+  padding: 40px;
+  margin: 15px;
+}
+
+button {
+  height: 35px;
+  width: 140px;
+}
+
+input {
+  height: 20px;
+  width: 45px;
+}
+/*# sourceMappingURL=Storefront.css.map */

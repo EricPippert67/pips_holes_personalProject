@@ -1,0 +1,40 @@
+
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-right: 50px;
+    background-color: yellow;
+
+}
+.div{
+    background-color: teal;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70px;
+
+    
+}
+.location {
+   align-items: center;        
+    margin-top: 10px;
+    background-color: blue; 
+    width: 100%;
+    height: 40px;
+
+
+}
+
+.loginRegister{
+    box-sizing: border-box;
+    margin-top: 10px;
+    width: 80%;
+    height: 40px;
+    font-weight: 200px;
+align-items: center;
+justify-content: center;
+    background-color: red;
+}
