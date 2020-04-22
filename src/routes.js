@@ -1,16 +1,19 @@
 import React from 'react';
 import{Switch, Route} from 'react-router-dom';
-import Footer from './Components/Footer/Footer';
-import ShoppingCart from './Components/ShoppingCart/ShoppingCart';
-import Header from './Components/Header/Header';
-import Sidebar from './Components/Sidebar/Sidebar';
+import ShoppingCart from './Components/ShoppingCart/ShoppingCart'
+import OrderNow from './Components/OrderScreen/OrderNow'
+import Admin from './Components/Admin/Admin'
+import Storefront from './Components/Storefront/Storefront';
+import NeedHelp from './Components/Footer/NeedHelp'
 
 export default(
     <Switch>
-        {/* <Route exact path='/' component={Footer}/>
-        <Route path='/shoppingCart' component={ShoppingCart}/> */}
-        <Route path='/header' component={Header}/>
-        {/* <Route path='/sidebar' component={Sidebar}/> */}
+        <Route exact path='/' component={Storefront}/>
+         <Route path='/shoppingCart' component={ShoppingCart}/> 
+            <Route path='/orderNow' component={OrderNow}/>
+            <Route path='/needHelp' component={NeedHelp}/>
+        <Route path='/admin' component={Admin}/>
+     
 
 
     </Switch>

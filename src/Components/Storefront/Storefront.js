@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import SWS from 'aws-sdk'
+import {Link} from 'react-router-dom'
 import Footer from'../Footer/Footer';
 import Sidebar from  '../Sidebar/Sidebar';
 import{withRouter} from 'react-router-dom'
@@ -10,32 +12,21 @@ import './Storefront.css'
 
 
 function Storefront(props) {
-    const [product_id, setProduct_id] = useState(0);
-    const [name, setName] = useState(' ');
-    const [image, setImage] = useState('url');
-    const [description, setDescription] = useState(' ');
-    const [price, setPrice] = useState('');
-    const [category, setCategory] = useState(' ')
+    // const [product_id, setProduct_id] = useState(0);
+    // const [name, setName] = useState(' ');
+    // const [image, setImage] = useState('url');
+    // const [description, setDescription] = useState(' ');
+    // const [price, setPrice] = useState('');
+    // const [category, setCategory] = useState(' ')
     
 
 
 
-const order = () => {
-    props.history.push('/test')
-
-}
-const learnHow = () => {
-    props.history.push('/test')
-
-}    
-const orderMerch = () =>{
-    props.history.push('/test')
-}    
 
 
-    useEffect(() => {
 
-    })
+    
+
     
         return(
             
@@ -43,7 +34,7 @@ const orderMerch = () =>{
                 <Sidebar/>
            
             <div className= 'Storefront'>
-             <input value={product_id} onChange={e => setProduct_id(e.target.value)} placeholder='ProductId' type = 'number'  name= 'productId' />
+             {/* <input value={product_id} onChange={e => setProduct_id(e.target.value)} placeholder='ProductId' type = 'number'  name= 'productId' />
 
              <input value={name} placeholder='name' onChange={e => setName(e.target.value)} type = 'text'  name= 'name' />
 
@@ -53,20 +44,24 @@ const orderMerch = () =>{
 
              <input value={price} onChange={e => setPrice(e.target.value)} placeholder='Price' type = 'price'  name= 'price' />
 
-             <input value={category} onChange={e => setCategory(e.target.value)} placeholder='Category' type = 'text'  name= 'Category' />
+             <input value={category} onChange={e => setCategory(e.target.value)} placeholder='Category' type = 'text'  name= 'Category' /> */}
 
-            <p>
+            {/* <p>
                     {product_id}
-            </p>
+            </p> */}
             <div className= 'donut-cont1'>
             <div className='orderDonut'>
-            
-             <button onClick={order}>Order Now</button> 
+            <Link to='/orderNow'>
+            <img className= 'orderDonutImg' src={'https://pip-pipsholes.s3-us-west-1.amazonaws.com/assorted-dozen-donuts.jpg'} width={510} height={450} mode='fit'/>
+             <button>Order Now</button> 
+             </Link>
                 </div>
-                <div className='donut-cont1a'>
+            <div className='donut-cont1a'>
             <div className='freeDonut'>
                 Free Donut Saturday
-                <button onClick={learnHow}>Learn How</button> 
+                <Link to='/freeDonut'>
+                <button>Learn How</button> 
+                </Link>
             </div>
             <div className='randomDonutImg'>
                 random donut image
@@ -75,15 +70,22 @@ const orderMerch = () =>{
           </div>              
             
            <div className='donut-cont2'>
+            
             <div className='fundraising'>
-                Fundraising
-                <button onClick={learnHow}>Learn How</button> 
+        
+                <Link to='/Fundraising'>
+            <img className='fundraise-img' src ='https://image.shutterstock.com/image-vector/fundraising-stamp-sticker-seal-round-600w-542480833.jpg' width='400px' height= '400px'/>
+                {/* <button>Learn How</button>  */}
+                </Link>
             </div>
             <div className='merchImage'>
                 image of merchandise
-                <button onClick={orderMerch}>Order merchandise</button> 
+                <Link to='/orderMerchandise'>
+                <button>Order merchandise</button> 
+                </Link>
             </div>
             </div>   
+            
             <Footer/>
             </div> 
                         

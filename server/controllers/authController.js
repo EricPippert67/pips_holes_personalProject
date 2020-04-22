@@ -67,49 +67,64 @@ pay:(req,res)=>{
             }
           }
         )},
-    email: async (req, res) => {
-        const { name, message, email, title, image } = req.body
-            
-        try {
-                   
-        let transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                user: EMAIL,
-                 pass: PASSWORD
-                }
-            });
+        email: async(req, res) => {
+          // try/catch is used to handle errors without the use of .then and .catch
+          try {
+              //The transporter is essentially the email that you are using to send
+              //emails to your users. This is done using NodeMailers createTransport
+              //method, passing it an object containing the information needed to 
+              //sign into the email.
+              let transporter = nodemailer.createTransport({
+                  host: 'smtp.mail.yahoo.com',
+                  //host: 'smtp.gmail.com'
+                  port: 465,
+                  //gmailPORT --> port: 587
+                  service: 'yahoo',
+                  //service: 'gmail'
+                  secure: false,
+                  //gmailONLY --> requireTLS: true
+                  //You should include your email and password for this email account
+                  //to your .env file to keep that information secure
+                  auth: {
+                      user: EMAIL,
+                      pass: PASSWORD
+                  }
+              });
             
              
-        let info = await transporter.sendMail({
-                from: `'${name}' <${email}>`, 
-                to: EMAIL,
-                subject: title, //This will show on the subject of the email
-                    text: message, //for clients with plaintext support only
-                    html: `<div>${message}<div> 
-                          <img src="cid:unique@nodemailer.com"/>`,
-                    attachments: [
-                      { //this is the attachment of the document
+              let info = await transporter.sendMail({
+                from: `Eric Pippert <${EMAIL}>`,
+                to: 'pipsholes@yahoo.com',
+                subject: 'NodeMailer Test',
+                //text is for plain text support if the html cannot load properly
+                text: 'This is a NodeMailer Test',
+                //html contains the body of your email, and can use html tags to
+                //structure it, and inline styling to style it. IF you are using an
+                //image, you should pass the src that is provided below, and then
+                //give the actual image a value in the attachments array below.
+                html: `<div>This is NodeMailer Test</div>
+                       <img src="cid:unique@nodemailer.com"/>`,
+                //attachments include files attached to the email, as well as sources
+                //for your images.
+                attachments: [
+                    {
                         filename: 'license.txt',
                         path: 'https://raw.github.com/nodemailer/nodemailer/master/LICENSE'
-                      },
-                      { //this is the embedded image
-                        cid: 'unique@nodemailer.com', //same cid value as in the html img src
-                        path:image
-                      }
-                    ]
-                  }, (err, res) => {
-                    if (err) {
-                      console.log('err', err)
-                    } else {
-                      console.log('res', res)
-                      res.status(200).send(info)
+                    },
+                    {
+                        cid: 'unique@nodemailer.com',
+                        path: 'https://i.kym-cdn.com/photos/images/original/001/516/899/f31.jpg'
                     }
-                  })
-                } catch (err) {
-                  console.log(err)
-                  res.sendStatus(500)
+                ]
+            }, (err, res) => {
+                if(err){
+                    console.log(err)
+                } else {
+                    res.status(200).send(info);
                 }
-              }
+            })
+        } catch(err){
+            res.status(500).send(err);
         }
-  
+    } 
+}

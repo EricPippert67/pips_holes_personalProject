@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import{Link} from 'react-router-dom'
 import './Footer.css';
 // import SocialFollow from './SocialFollow'
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -14,9 +15,15 @@ const Footer = () =>{
             
     <div className='Footer'>
         <div className='Footer1'>
+            <Link to='aboutUs'>
     <div className = 'AboutUs'>About Us</div>
+    </Link>
+    <Link to='needHelp'>
     <div className = 'needHelp?'>Need Help?</div>
+    </Link>
+    <Link to='contactUs'>
     <div className= 'contactUs'>Contact Us</div>
+    </Link>
     </div>
     <div className='Footer2'>
 

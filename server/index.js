@@ -9,6 +9,8 @@ const express = require('express'),
       app = express();
 
 app.use(express.json());
+app.post('/api/email', authCtrl.email);
+
 app.use(session({
     resave: false,
     saveUninitialized: true,

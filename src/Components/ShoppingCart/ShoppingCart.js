@@ -22,7 +22,7 @@ class ShoppingCart extends Component {
    }
 
    deleteCartItem = (id) => {
-       axios.delete(`/api/cart-item/${id}`)
+       axios.delete(`/api/cart_item/${id}`)
        .then(() => {
            this.getCart()
        })
@@ -43,6 +43,7 @@ class ShoppingCart extends Component {
         })
         return (
             <div className='products'>
+                Shop
                 {cartItems}
             </div>
         )
