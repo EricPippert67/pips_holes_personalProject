@@ -10,7 +10,7 @@ const Sidebar = (props) =>{
 
        <nav className='sidebar-menu' >
 
-         <Link to='/orderNow 'style={{textDecoration: 'none'}}>
+         <Link to='/orderNow' style={{textDecoration: 'none'}}>
            <h1 className='sidebar-donuts'>Donuts</h1>
            </Link>
          <Link to='/orderNow'  style={{textDecoration: 'none'}}>

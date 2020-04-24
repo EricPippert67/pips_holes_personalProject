@@ -2,21 +2,23 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   width: 100%;
   height: 100px;
-  background-color: red;
+  background-color: teal;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
 }
 
-.header-img {
-  height: 50px;
-  width: 50px;
+.header img {
+  margin-left: 0px;
+  height: 100px;
+  width: 100px;
 }
 
-.home {
-  background-color: yellow;
+.home img {
+  background: blue;
   width: 100px;
   height: 100px;
 }
@@ -26,24 +28,25 @@
       -ms-flex-align: center;
           align-items: center;
   margin-top: 10px;
-  background-color: white;
   width: 100%;
   height: 40px;
+  font-weight: 200px;
+  font-size: 20px;
 }
 
-.loginRegister {
+.login {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 10px;
-  width: 80%;
+  width: 100%;
   height: 40px;
   font-weight: 200px;
+  font-size: 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: red;
 }
 /*# sourceMappingURL=Header.css.map */

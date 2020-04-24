@@ -12,20 +12,9 @@ import './Storefront.css'
 
 
 function Storefront(props) {
-    // const [product_id, setProduct_id] = useState(0);
-    // const [name, setName] = useState(' ');
-    // const [image, setImage] = useState('url');
-    // const [description, setDescription] = useState(' ');
-    // const [price, setPrice] = useState('');
-    // const [category, setCategory] = useState(' ')
+   
     
-
-
-
-
-
-
-    
+  
 
     
         return(
@@ -33,27 +22,18 @@ function Storefront(props) {
             <div className='Storefront-Container'>
                 <Sidebar/>
            
-            <div className= 'Storefront'>
-             {/* <input value={product_id} onChange={e => setProduct_id(e.target.value)} placeholder='ProductId' type = 'number'  name= 'productId' />
-
-             <input value={name} placeholder='name' onChange={e => setName(e.target.value)} type = 'text'  name= 'name' />
-
-             <input value={image} onChange={e => setImage(e.target.value)} placeholder='URL' type = 'url'  name= 'Image' />
-
-             <input value={description} onChange={e => setDescription(e.target.value)} placeholder='description' type = 'text'  name= 'description' />
-
-             <input value={price} onChange={e => setPrice(e.target.value)} placeholder='Price' type = 'price'  name= 'price' />
-
-             <input value={category} onChange={e => setCategory(e.target.value)} placeholder='Category' type = 'text'  name= 'Category' /> */}
+       
 
             {/* <p>
                     {product_id}
             </p> */}
+            <div className='storefront-main'>
             <div className= 'donut-cont1'>
             <div className='orderDonut'>
             <Link to='/orderNow'>
-            <img className= 'orderDonutImg' src={'https://pip-pipsholes.s3-us-west-1.amazonaws.com/assorted-dozen-donuts.jpg'} width={510} height={450} mode='fit'/>
-             <button>Order Now</button> 
+           
+             <button className='orderButton'>Order Now</button> 
+            <img className= 'orderDonutImg' src={'https://i.pinimg.com/736x/76/76/bb/7676bbfa4e9e0fe1234d2642bc407931.jpg'} width={510} height={450} mode='fit'/>
              </Link>
                 </div>
             <div className='donut-cont1a'>
@@ -64,7 +44,7 @@ function Storefront(props) {
                 </Link>
             </div>
             <div className='randomDonutImg'>
-                random donut image
+            <img className= 'randomImg' src={'https://farm3.staticflickr.com/2885/12322648285_317a0bf8da_z.jpg'} />
             </div>
             </div>
           </div>              
@@ -85,13 +65,13 @@ function Storefront(props) {
                 </Link>
             </div>
             </div>   
-            
             <Footer/>
+            </div>
             </div> 
                         
             
          
-         </div>
+         
         )
 }
 

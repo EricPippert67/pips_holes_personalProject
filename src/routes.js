@@ -5,6 +5,7 @@ import OrderNow from './Components/OrderScreen/OrderNow'
 import Admin from './Components/Admin/Admin'
 import Storefront from './Components/Storefront/Storefront';
 import NeedHelp from './Components/Footer/NeedHelp'
+import Login from './Components/Login/Login'
 
 export default(
     <Switch>
@@ -13,6 +14,7 @@ export default(
             <Route path='/orderNow' component={OrderNow}/>
             <Route path='/needHelp' component={NeedHelp}/>
         <Route path='/admin' component={Admin}/>
+        <Route path='/login' component={Login}/>
      
 
 

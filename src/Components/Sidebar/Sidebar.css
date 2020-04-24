@@ -1,5 +1,5 @@
 .Sidebar {
-  background-color: green;
+  background-color: burlywood;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,10 +10,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixed;
+  margin-top: 0px;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 30%;
+  width: 15%;
   height: 100%;
 }
 

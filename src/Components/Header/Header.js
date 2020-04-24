@@ -3,16 +3,16 @@ import {Link} from 'react-router-dom';
 import './Header.css'
 import logo from '../../pip-logo.png';
 
-const Header = () => {
+const Header = (props) => {
     
   return ( 
     <div className='header'>
     < img className='header-img' src={logo}/>
-      <Link to='Login/Register'>
-    <div>Login/Register</div>
+      <Link to='Login'>
+    <div className='login'>Login/Register</div>
     </Link>
     <Link to='Find_A_Location'>
-    <div>Find A Location</div>
+    <div className='location'>Find A Location</div>
     </Link>
     <div className='home'>
         <Link to='/'>

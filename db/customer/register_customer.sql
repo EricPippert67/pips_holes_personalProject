@@ -1,4 +1,4 @@
-insert into customer (
+insert into customers (
     email,
     password
 ) values (
