@@ -7,15 +7,18 @@ const Header = (props) => {
     
   return ( 
     <div className='header'>
+      <Link to='/'>
     < img className='header-img' src={logo}/>
+    </Link>
       <Link to='Login'>
     <div className='login'>Login/Register</div>
     </Link>
     <Link to='Find_A_Location'>
     <div className='location'>Find A Location</div>
     </Link>
-    <div className='home'>
-        <Link to='/'>
+    
+    <div className='cart'>
+        <Link to='/shoppingcart'>
           <img className='home-img' src= 'https://media.discordapp.net/attachments/697873219692265492/702250665300459630/donut-icon.png?width=672&height=672' width='70px' height='70px'/>
         </Link>
 

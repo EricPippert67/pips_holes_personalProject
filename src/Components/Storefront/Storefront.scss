@@ -6,6 +6,7 @@
 
 
     }
+    
     .storefront-main{
         display: flex;
         padding-left: 300px;
@@ -93,12 +94,13 @@
         position: relative;
        
     }
-    button{
+    .merch-order-button{
     margin-top: 130px;
     height: 45px;
     width: 140px;
     background-color:blue;
 }
+
     input{
         height: 20px;
         width: 200px;

@@ -1,6 +1,45 @@
+* {
+  margin: 0;
+}
+
 .orderNow-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.donut-map-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.donut-container {
+  background-color: indianred;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 400px;
+  width: 400px;
+}
+
+.product-name {
+  height: 70px;
+  background-color: magenta;
+}
+
+.product-price {
+  background-color: mediumslateblue;
+  height: 70px;
+}
+
+.adds {
+  margin: 0;
+  background-color: indigo;
 }
 /*# sourceMappingURL=OrderNow.css.map */

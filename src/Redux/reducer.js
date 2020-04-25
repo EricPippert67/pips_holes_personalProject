@@ -3,6 +3,7 @@ import axios from "axios";
 const initialState = {
    user: {
       username: ""
+
    },
    // credentials: {
    //    username:"",
@@ -90,7 +91,6 @@ export default function reducer (state = initialState, action) {
       return {...state, user:payload};
 
       case LOGIN_USER + "_FULFILLED": 
-      console.log(payload)
       return {...state, user:payload};
 
       case GET_CURRENT_USER + "_FULFILLED": 

@@ -1,3 +1,28 @@
+*{margin:0;}
 .orderNow-container{
    justify-content: center;
+}
+
+.donut-map-container{
+   display: flex;
+}
+.donut-container{
+   background-color: indianred;
+   display: flex;
+   margin: 5px;
+   flex-direction: column;
+   height: 400px;
+   width: 400px;
+}
+.product-name{
+   height: 70px;
+   background-color: magenta;
+}
+.product-price{
+   background-color: mediumslateblue;
+   height: 70px;
+}
+.adds{
+   margin: 0;
+   background-color: indigo;
 }

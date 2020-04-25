@@ -1,1 +1,3 @@
-select * from product;
+select * from product
+where category = $1;
+

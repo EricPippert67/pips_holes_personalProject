@@ -5,6 +5,7 @@ import Header from './Components/Header/Header'
 import logo from './logo.svg';
 import Storefront from './Components/Storefront/Storefront'
 import SocialFollow from './SocialFollow'
+import {Dropdown} from './Dropdown'
 import './Reset.css';
 import './App.css';
 

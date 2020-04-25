@@ -59,14 +59,17 @@ massive({
     console.log('db connected')
 })
 
-app.get('/api/product, donutCtrl.getProduct');
+
 app.post('/api/cart_item', donutCtrl.addToCart);
 app.get('/api/cart/:id', donutCtrl.getCart);
 app.delete('/api/cart_item/:id', donutCtrl.deleteCartItem);
+app.get('/api/products/donuts', donutCtrl.getDonuts)
+app.get('/api/products/drinks', donutCtrl.getDrinks)
 
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 app.get('/api/logout', authCtrl.logout);
 app.post('/api/payment', authCtrl.pay)
+
 
 app.listen(port, () => console.log(`Server running on ${port}`));

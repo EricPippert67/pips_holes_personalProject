@@ -1,8 +1,16 @@
 module.exports= {
-    getProduct: (req,res) => {
+    getDrinks: (req,res) => {
         const db = req.app.get('db');
 
-        db.product.get_product()
+        db.product.get_product('drinks')
+        .then(product =>res.status(200).send (product))
+        .catch(err => res.status(500).send(err));
+
+    },
+    getDonuts: (req,res) => {
+        const db = req.app.get('db');
+
+        db.product.get_product('donuts')
         .then(product =>res.status(200).send (product))
         .catch(err => res.status(500).send(err));
 
