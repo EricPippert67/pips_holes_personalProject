@@ -1,1 +1,60 @@
-/* No CSS *//*# sourceMappingURL=ShoppingCart.css.map */
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.cart-image {
+  width: 150px;
+  height: 100%;
+}
+
+.cart-info {
+  width: 150px;
+}
+
+.s-name {
+  font-size: 20px;
+}
+
+s-remove {
+  width: 20px;
+}
+
+.sub-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+}
+/*# sourceMappingURL=ShoppingCart.css.map */

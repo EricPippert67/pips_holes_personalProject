@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100vh -100px);
+  height: calc(80vh -100px);
   width: 100%;
   overflow: scroll;
 }
@@ -20,30 +20,33 @@
 }
 
 .donut-cont1 {
-  background-color: blanchedalmond;
+  background-color: gray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
 }
 
 .donut-cont1a {
   margin-left: 50px;
 }
 
+.donut-cont2 {
+  width: 100%;
+  height: 100%;
+}
+
 .orderDonut {
   background-color: indigo;
   margin-left: 100px;
   margin-top: 100px;
-  width: 100%;
-  height: 500px;
-  padding: 10px;
+  width: 82%;
+  height: 600px;
   margin: 15px;
 }
 
 .orderDonutImg {
   width: 100%;
-  height: 500px;
+  height: 550px;
   padding: 0px;
 }
 
@@ -53,24 +56,28 @@
 
 .freeDonut {
   background-color: mediumpurple;
-  width: 500px;
-  height: 200px;
-  padding: 40px;
-  margin: 15px;
-  position: relative;
+  width: 600px;
+  height: 300px;
+  margin-top: 15px;
+}
+
+.donutImg {
+  width: 600px;
+  background-image: url(../../freedonutimg.png);
+  background-size: 100% 100%;
+  height: 250px;
 }
 
 .randomDonutImg {
   background-color: plum;
   width: 600px;
   height: 300px;
-  padding: 2px;
-  margin: 15px;
+  margin: 10px;
   position: relative;
 }
 
 .randomImg {
-  width: 500px;
+  width: 600px;
   height: 300px;
 }
 
@@ -78,31 +85,40 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: blue;
-  width: 100%;
-  height: 500px;
+  background-color: gray;
 }
 
 .fundraising {
   background-color: red;
   width: 50%;
-  height: 400px;
-  padding: 40px;
-  margin: 15px;
+  height: 420px;
+  padding: 30px;
+  margin-left: 1px;
 }
 
 .fundraise-img {
-  width: 500px;
+  width: 100%;
   height: 420px;
 }
 
+.fundraisinginfo {
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 .merchImage {
-  background-color: lime;
-  width: 550px;
+  width: 50%;
   height: 400px;
-  padding: 40px;
-  margin: 15px;
+  padding: 20px;
+  margin: 1px;
   position: relative;
+}
+
+.merchpic {
+  width: 100%;
+  height: 420px;
 }
 
 .merch-order-button {
@@ -115,5 +131,145 @@
 input {
   height: 20px;
   width: 200px;
+}
+
+.merchandiseinfo {
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.freeDonutInfo {
+  margin-top: 200px;
+  font-size: 45px;
+}
+
+.FindLocationInfo {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .name {
+    font-size: 20px;
+  }
+  .Storefront-Container {
+    width: 100%;
+    padding: 40px;
+  }
+  .storefront-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: columns;
+            flex-direction: columns;
+    padding-left: 0px;
+  }
+  .donut-cont1 {
+    width: 100%;
+  }
+  .orderDonut {
+    margin: 0px;
+    width: 100%;
+  }
+  .freeDonut {
+    width: 50%;
+  }
+  .donutImg {
+    width: 50%;
+  }
+  .randomDonutImg {
+    width: 50%;
+  }
+  .randomImg {
+    width: 50%;
+  }
+  .donut-cont2 {
+    width: 100%;
+  }
+  .fundraising {
+    width: 100%;
+  }
+  .fundraise-img {
+    width: 50%;
+  }
+  .merchImage {
+    width: 50%;
+  }
+  .merchpic {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Storefront-Container {
+    width: 100%;
+    padding: 40px;
+  }
+  .storefront-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: columns;
+            flex-direction: columns;
+    padding-left: 0px;
+  }
+  .donut-cont1 {
+    width: 100%;
+  }
+  .orderDonut {
+    margin: 0px;
+    width: 100%;
+    height: 300px;
+  }
+  .orderDonutImg {
+    height: 300px;
+  }
+  .orderButton {
+    margin-top: 1px;
+  }
+  .freeDonut {
+    width: 50%;
+  }
+  .donutImg {
+    width: 50%;
+  }
+  .randomDonutImg {
+    width: 50%;
+  }
+  .randomImg {
+    width: 50%;
+  }
+  .donut-cont2 {
+    width: 100%;
+  }
+  .fundraising {
+    width: 100%;
+    height: 300px;
+    margin-top: 2px;
+  }
+  .fundraise-img {
+    width: 100%;
+    height: 300px;
+  }
+  .fundraisinginfo {
+    font-size: 30px;
+  }
+  .merchImage {
+    width: 100%;
+    height: 300px;
+  }
+  .merchpic {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=Storefront.css.map */

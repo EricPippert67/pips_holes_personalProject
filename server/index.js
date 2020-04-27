@@ -60,11 +60,11 @@ massive({
 })
 
 
-app.post('/api/cart_item', donutCtrl.addToCart);
+app.post('/api/cart-item', donutCtrl.addToCart);
 app.get('/api/cart/:id', donutCtrl.getCart);
-app.delete('/api/cart_item/:id', donutCtrl.deleteCartItem);
-app.get('/api/products/donuts', donutCtrl.getDonuts)
-app.get('/api/products/drinks', donutCtrl.getDrinks)
+app.delete('/api/cart-item/:id', donutCtrl.deleteCartItem);
+app.get('/api/products/:category', donutCtrl.getProduct)
+
 
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);

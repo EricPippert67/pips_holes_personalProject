@@ -1,16 +1,10 @@
 module.exports= {
-    getDrinks: (req,res) => {
-        const db = req.app.get('db');
+    
+    getProduct: (req,res) => {
+        const {category}= req.params,
+         db = req.app.get('db');
 
-        db.product.get_product('drinks')
-        .then(product =>res.status(200).send (product))
-        .catch(err => res.status(500).send(err));
-
-    },
-    getDonuts: (req,res) => {
-        const db = req.app.get('db');
-
-        db.product.get_product('donuts')
+        db.product.get_product(category)
         .then(product =>res.status(200).send (product))
         .catch(err => res.status(500).send(err));
 
@@ -18,7 +12,9 @@ module.exports= {
     addToCart: (req,res) => {
         const{cart_id, product_id, price} = req.body,
         db = req.app.get('db');
-
+        console.log(req.body)
+            
+        
         db.cart.add_to_cart(cart_id, product_id, price)
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err));

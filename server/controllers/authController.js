@@ -68,6 +68,7 @@ pay:(req,res)=>{
           }
         )},
         email: async(req, res) => {
+            const {email, password}  = req.body;
           // try/catch is used to handle errors without the use of .then and .catch
           try {
               //The transporter is essentially the email that you are using to send
@@ -94,7 +95,7 @@ pay:(req,res)=>{
              
               let info = await transporter.sendMail({
                 from: `Eric Pippert <${EMAIL}>`,
-                to: 'pipsholes@yahoo.com',
+                to: email,
                 subject: 'NodeMailer Test',
                 //text is for plain text support if the html cannot load properly
                 text: 'This is a NodeMailer Test',

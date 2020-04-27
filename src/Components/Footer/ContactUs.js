@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-const OrderScreen = (props) =>{
+const ContactUs = (props) =>{
 
 
     return(
 
 
-        <div>
-            Order donut
+        <div className='contactUsTxt'>
+            Call 1-800-pip-hole to order by phone if not please login in to our website at:  www.pipsholes.com
+
         </div>
     )
 }
-export default OrderScreen;
+export default ContactUs;

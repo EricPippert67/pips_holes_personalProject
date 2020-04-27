@@ -19,7 +19,7 @@ const Sidebar = (props) =>{
          <Link to='/orderNow'  style={{textDecoration: 'none'}}>
            <h1 className='sidebar-other' style={{textDecoration: 'none'}}>Other Drinks</h1>
            </Link>
-         <Link to='/orderMerch'  style={{textDecoration: 'none'}}>
+         <Link to='/orderMerchandise'  style={{textDecoration: 'none'}}>
            <h1 className='sidebar-merchandise'>Merchandise</h1>
            </Link>
            

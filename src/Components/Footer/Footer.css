@@ -1,5 +1,4 @@
 .Footer {
-  background-color: aquamarine;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,8 +7,8 @@
 }
 
 .Footer1 {
-  background-color: peru;
   margin-left: 35px;
+  margin-top: 20px;
   height: 100px;
   width: 50%;
   display: -webkit-box;
@@ -34,8 +33,28 @@
   height: 40px;
 }
 
+.aboutUsTxt {
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.needHelpTxt {
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.contactUsTxt {
+  margin-top: 200px;
+  font-size: 50px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
 .Footer2 {
-  background-color: peru;
   margin-right: 10px;
   height: 70px;
   width: 50%;
@@ -98,5 +117,14 @@ a.instagram {
 .copyright {
   font-size: 10px;
   font-style: bold italic;
+}
+
+@media screen and (max-width: 380px) {
+  .Footer {
+    width: 100%;
+  }
+  .Social-Container {
+    padding: 20px 10px;
+  }
 }
 /*# sourceMappingURL=Footer.css.map */

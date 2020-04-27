@@ -7,9 +7,11 @@ const Header = (props) => {
     
   return ( 
     <div className='header'>
+
       <Link to='/'>
     < img className='header-img' src={logo}/>
     </Link>
+    <div className='name'>PIP'S HOLES</div>
       <Link to='Login'>
     <div className='login'>Login/Register</div>
     </Link>

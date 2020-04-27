@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import {connect} from "react-redux";
 import {registerUser, loginUser} from '../../redux/reducer'
 
+
+const nodemailer =require('nodemailer')
+
 const Login = (props) => {
    const [username, setUsername] = useState(""),
          [password, setPassword] = useState(""),
@@ -49,12 +52,12 @@ const Login = (props) => {
             {!registerToggle 
             ? (
                <>
-                  <button onClick={() => handleLogin()}>Login</button>
+                  <button className= 'logbutton' onClick={() => handleLogin()}>Login</button>
                   <p>If not Registered Lets get it done? <span onClick={() => setRegisterToggle(!registerToggle)}>Register</span></p>
                </>)
             : (
                <>
-                  <button onClick={() => handleRegister()}>Register</button>
+                  <button className='regbutton' onClick={() => handleRegister()}>Register</button>
                   <p>have an account? <span onClick={() => setRegisterToggle(!registerToggle)}>Login</span></p>
                </>)
             }

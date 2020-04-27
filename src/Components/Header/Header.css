@@ -17,6 +17,12 @@
   width: 100px;
 }
 
+.name {
+  font-size: 80px;
+  font-style: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .home img {
   background: blue;
   width: 100px;
@@ -48,5 +54,27 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .name {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header {
+    background-color: red;
+    width: 100%;
+  }
+  .name {
+    font-size: 20px;
+  }
+  .login {
+    font-size: 10px;
+  }
+  .location {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=Header.css.map */

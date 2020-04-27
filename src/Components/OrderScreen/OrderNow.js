@@ -27,7 +27,6 @@ const OrderNow = ( props) => {
       setDonutToggle(!donutToggle)
    }
 
-   
 
 useEffect (() =>{
    axios.get('/api/products/donuts')
@@ -38,50 +37,60 @@ useEffect (() =>{
 } , [])
 
 useEffect (() =>{
-   axios.get('/api/products/donuts')
+   axios.get(`/api/products/Drinks`)
    .then(res=> { 
       console.log(res.data)
       setDrinkProducts(drinks => [...drinks, ...res.data])
    })
 } , [])
-
+console.log(props)
 return (
 
    <div className='orderNow-container'>
-      <div>
-         <h2 onClick= {donutView}>Donuts</h2>
-         <h2 onClick={drinkView}>Hot Cocoa & Other Drinks</h2>
-      </div>
-      <div>
+         <div> 
+            
+               <div className='donutView'>
+               <h2 onClick= {donutView}>Donuts</h2>
+               </div>
+               <div className='drinkView'>
+               <h2 onClick={drinkView}>Hot Cocoa & Other Drinks</h2>
+               </div>
+         </div>
+         <div>
+         {window.innerWidth <= 800? "": (
+         <div>
+            {donutToggle ? ( 
+               <div className='orderDonutTxt'>
+               Order  Donuts 
+               </div>
+            ):( 
+               <div className="orderDonutTxt">
+                  Order  Drinks
+               </div>
+            )}
+         </div>
+         )}
+
+         <div>
          {donutToggle ? ( 
-            <div>
-              orderDonuts  
+               <div className='donut-map-container'>
+               {donutProducts.map(donut =>{ 
+                  return <Product product ={donut} key={donut.product_id}/>
+
+               })} 
+               </div>
+            ):( 
+               <div className='donut-map-container'>
+                  {drinkProducts.map(drinks =>{ 
+                  return <Product product ={drinks} key={drinks.product_id} />
+                  })}
+                  </div>
+            )}
             </div>
-         ):( 
-            <div>
-               orderDrinks
-            </div>
-         )}
+         </div>
       </div>
-
-      <div>
-      {donutToggle ? ( 
-            <div className='donut-map-container'>
-              {donutProducts.map(donut =>{ 
-                 return <Product product ={donut} key={donut.product_id}/>
-
-              })} 
-            </div>
-         ):( 
-            <div>
-               orderDrinks
-            </div>
-         )}
-      </div>
-
-   </div>
-)}
-
+   )
+}
 export default OrderNow;
 
 
@@ -131,7 +140,7 @@ export default OrderNow;
 //             : (
 //                <>
 //                   <button onClick={() => handleDrinks()}>Hot Cocoa & Drinks</button>
-//                   <p>ORDER DRINKS <span onClick={() => setDrinksToggle(!drinksToggle)}>Drinks</span></p>
+//                   <p> <span onClick={() => setDrinksToggle(!drinksToggle)}>Drinks</span></p>
 //                </>)
 //             } */}
 //       </div>

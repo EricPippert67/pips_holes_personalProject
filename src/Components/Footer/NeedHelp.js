@@ -7,7 +7,7 @@ const NeedHelp = (props) =>{
     return(
 
 
-        <div>
+        <div className='needHelpTxt'>
             <p>
             If you need any assistance please call this toll free number 1-800-pip-help
             </p>
