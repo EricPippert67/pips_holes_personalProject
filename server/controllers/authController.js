@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
-const stripe = require('stripe')(process.env.STRIPE_SECRET);
 const nodemailer= require('nodemailer');
+const {SECRET_KEY}=process.env
+stripe = require('stripe')(SECRET_KEY);
 
 const {EMAIL, PASSWORD} = process.env
 
@@ -45,28 +46,22 @@ module.exports = {
         req.session.destroy();
         res.sendStatus(200);
 },
-pay:(req,res)=>{
-    
-    const {token:{id},amount} = req.body;
-    console.log(id,amount,stripe)
-    stripe.charges.create(
-        {
-            amount:amount,
-            currency:'usd',
-            source:id,
-            description:'Test Charge'
-        },
-        (err, charge) => {
-            if(err) {
-                console.log(err)
-                return res.status(500).send(err)
-            } else {
-                console.log('Successful payment',charge)
-                
-                return res.status(200).send(charge)
-            }
-          }
-        )},
+completePayment: (req, res) => {
+    const {token, amount} = req.body;
+
+    const charge = stripe.charges.create({
+        amount,
+        currency: 'usd',
+        source: token.id,
+        description: 'Test Charge'
+    }, function(err, charge){
+        if(err){
+            return res.sendStatus(500);
+        }
+        res.sendStatus(200);
+    })
+},
+
         email: async(req, res) => {
             const {email, password}  = req.body;
           // try/catch is used to handle errors without the use of .then and .catch

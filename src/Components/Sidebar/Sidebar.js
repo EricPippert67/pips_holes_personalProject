@@ -11,14 +11,14 @@ const Sidebar = (props) =>{
        <nav className='sidebar-menu' >
 
          <Link to='/orderNow' style={{textDecoration: 'none'}}>
-           <h1 className='sidebar-donuts'>Donuts</h1>
+           <h1 className='sidebar-donuts'>Order Now</h1>
            </Link>
-         <Link to='/orderNow'  style={{textDecoration: 'none'}}>
+         {/* <Link to='/orderNow'  style={{textDecoration: 'none'}}>
            <h1 className='sidebar-cocoa'>Hot Cocoa</h1>
            </Link>
          <Link to='/orderNow'  style={{textDecoration: 'none'}}>
            <h1 className='sidebar-other' style={{textDecoration: 'none'}}>Other Drinks</h1>
-           </Link>
+           </Link> */}
          <Link to='/orderMerchandise'  style={{textDecoration: 'none'}}>
            <h1 className='sidebar-merchandise'>Merchandise</h1>
            </Link>

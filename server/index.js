@@ -10,6 +10,7 @@ const express = require('express'),
 
 app.use(express.json());
 app.post('/api/email', authCtrl.email);
+app.post('/api/payment', authCtrl.completePayment);
 
 app.use(session({
     resave: false,
@@ -69,7 +70,7 @@ app.get('/api/products/:category', donutCtrl.getProduct)
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 app.get('/api/logout', authCtrl.logout);
-app.post('/api/payment', authCtrl.pay)
+// app.post('/api/payment', authCtrl.pay)
 
 
 app.listen(port, () => console.log(`Server running on ${port}`));

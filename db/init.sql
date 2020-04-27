@@ -22,7 +22,7 @@ create table customer_cart (
 create table cart_items (
     cart_item_id serial primary key,
     cart_id int references customer_cart(cart_id),
-    product_id int references products(product_id),
+    product_id int references product(product_id),
     qty int,
     price decimal
 );
