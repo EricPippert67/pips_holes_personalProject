@@ -13,9 +13,7 @@ module.exports= {
         const{cart_id, product_id, price} = req.body,
         db = req.app.get('db');
         console.log(req.body)
-            
-        
-        db.cart.add_to_cart(cart_id, product_id, price)
+          db.cart.add_to_cart(cart_id, product_id, price)
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err));
     },
@@ -39,12 +37,11 @@ module.exports= {
     completePurchase: async(req, res) =>{
         const{id} = req.params,
         db = req.app.get('db')
-
         db.cart.complete_purchase(id);
-
         let userCart = await db.cart.create_cart(id);
         let sessionUser = {...req.session.user, cart_id: userCart[0].cart_id}
         req.session.user = sessionUser;
         res.status(200).send(req.session.user);
     }
+    
 }
