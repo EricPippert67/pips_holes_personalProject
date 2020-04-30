@@ -65,7 +65,11 @@ app.post('/api/cart-item', donutCtrl.addToCart);
 app.get('/api/cart/:id', donutCtrl.getCart);
 app.delete('/api/cart_item/:id', donutCtrl.deleteCartItem);
 app.get('/api/products/:category', donutCtrl.getProduct);
-app.put('/api/cart/:id ' , donutCtrl.completePurchase);
+app.put('/api/product ' , donutCtrl.editProduct);
+app.get('/api/products', donutCtrl.getAllProducts)
+app.get('/api/product/:id', donutCtrl.getOneProduct)
+
+
 
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);

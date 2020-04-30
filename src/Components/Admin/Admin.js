@@ -9,31 +9,31 @@ class Admin extends Component{
         super()
 
         this.state = {
+            product_id:'',
             name: '',
             price: 0,
-            img: '',
-            category:''
+            image: '',
+            category:'',
+            inventory:[]
         }
        
     }
 
     componentDidMount(){
-        if (this.props.match.params.id){
-            axios.get(`/api/inventory/${this.props.match.params.id}`)
+       
+            axios.get(`/api/products`)
             .then(response => {
                 this.setState({
-                    name: response.data.name,
-                    price: response.data.price,
-                    img: response.data.img,
-                    category:response.data.category
+                    inventory: [...response.data]
                 })
             })
-        }
-    }
+            }
 
     
-    editProduct(id){
-        axios.put(`/api/inventory/${id}`, this.state)
+    editProduct(){
+        const {product_id,image, name, price, category}= this.state
+        console.log(product_id)
+        axios.put(`/api/product`, {product_id, image, name,price,category})
             .then(() => {
                 this.props.history.push('/')
             })
@@ -63,15 +63,39 @@ class Admin extends Component{
     categoryHandler(value){
         this.setState({category: value})
     }
+    selectHandler(id){
+        console.log(id)
+        axios.get(`/api/product/${id}`)
+        .then(res => {
+            console.log(res.data)
+            const {product_id,image, name, price, category}= res.data[0]
+            this.setState({
+                product_id,
+                image,
+                name,
+                price,
+                category
+            })
+        }).catch(err=> console.log(err))
+    }
     render(){
-        console.log(this.props)
+        console.log(this.state.inventory)
         return(
             <div className='form-container'>
-                    <img className='form-img' src={this.state.img} />
+
+            <select className="product-selector" 
+                         onChange={(event) =>this.selectHandler(event.target.value)}>
+               <option ></option>
+               {this.state.inventory
+                     .map(product => <option value={`${product.product_id}`}>  {product.name} </option>)
+               
+                }
+            </select>
+                    <img className='form-img' src={this.state.image} />
                 <div className='form-input-container'>
                 image
                 <input 
-                     value={this.state.img}
+                     value={this.state.image}
                     onChange={e => this.imageHandler(e.target.value)}
                 />
                 
@@ -98,8 +122,8 @@ class Admin extends Component{
                     </Link>
                     </div>
                     <div>
-                        {this.props.match.params.id ? (
-                            <button onClick={() => this.editProduct(this.props.match.params.id)}>Save Changes</button>
+                        {this.state.name ? (
+                            <button onClick={() => this.editProduct()}>Save Changes</button>
                         ):(
                         <div className='form-add-button'>
                         <Link to='/'>
