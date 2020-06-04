@@ -41,7 +41,7 @@ class Admin extends Component{
     
     createProduct(){
         console.log('button pressed')
-        axios.post('/api/inventory', {name: this.state.name, price: this.state.price, img: this.state.img})
+        axios.post('/api/inventory', {name: this.state.name, price: this.state.price, img: this.state.image})
         .then(response => {
             this.setState({inventory: response.data})})
            

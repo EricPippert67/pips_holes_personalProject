@@ -36,6 +36,7 @@ class ShoppingCart extends Component {
    }
 
    getCart = () => {
+       console.log(this.props.user.cart_id)
     axios.get(`/api/cart/${this.props.user.cart_id}`)
     .then(res => this.setState({cart: res.data}))
     .catch(err => console.log(err));
